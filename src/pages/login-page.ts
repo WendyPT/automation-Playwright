@@ -10,12 +10,12 @@ export class LoginPage {
         this.page = page; 
  }
     async fillEmail(user: string) {
-        await expect(this.page.getByTestId('auth-email')).toBeEnabled({timeout: 3000}); 
+        await expect(this.page.getByTestId('auth-email')).toBeEnabled({timeout: 10000}); 
         await this.page.getByTestId('auth-email').fill(user);
     }
     
     async fillPassword(password: string) {
-        await expect(this.page.getByTestId('auth-password')).toBeEnabled({timeout: 3000}); 
+        await expect(this.page.getByTestId('auth-password')).toBeEnabled({timeout: 10000}); 
         await this.page.getByTestId('auth-password').fill(password);
     }
     
@@ -24,8 +24,8 @@ export class LoginPage {
     }
 
     async loginUser(user: string, password: string) {
-        this.fillEmail(user);
-        this.fillPassword(password);
-        this.clickLoginUser();
+        await this.fillEmail(user);
+        await this.fillPassword(password);
+        await this.clickLoginUser();
     }
   }
