@@ -8,7 +8,7 @@ export class navBar {
         this.page = page; 
  }
     async clickLoginSection() {
-        await this.page.getByTestId('nav-bar-btn').click();
+        await this.page.getByTestId('nav-login-btn').click();
     }
         
   }

@@ -7,6 +7,7 @@ export class Cookies {
     constructor(page: Page){ 
         this.page = page; 
  }
+    
     async clickAcceptCookies() {
         await this.page.getByTestId('cookie-accept-all').click();
     }

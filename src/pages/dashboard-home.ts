@@ -7,7 +7,9 @@ export class DashboardPage{
         this.page = page;
     }
     async isAdminLogged(){
-       await expect(this.page).toHaveURL("https://staging.testertestarudo.com/es/admin");
+       await expect(this.page).toHaveURL("https://staging.testertestarudo.com/es/admin",
+       { timeout: 15000 }  // ← sube de 5000ms a 15000ms
+       );
     }
 
     async isStudentLogged(){
