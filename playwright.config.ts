@@ -1,5 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
+import dotenv from 'dotenv';
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '.env')});
+
 export default defineConfig({
   testDir: './tests',
   
@@ -17,7 +21,14 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     navigationTimeout: 30000,
+    actionTimeout: 15000, 
+    launchOptions: {                                    
+      args: ['--disable-blink-features=AutomationControlled']
+    }
   },
+
+  timeout: 60000,    
+  
 
   /* Configure projects for major browsers */
   projects: [
