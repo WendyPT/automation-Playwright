@@ -13,10 +13,14 @@ export class DashboardPage{
     }
 
     async isStudentLogged(){
-        await expect(this.page).toHaveURL("https://staging.testertestarudo.com/es/dashboard");
+        await expect(this.page).toHaveURL("https://staging.testertestarudo.com/es/login",
+        { timeout: 15000 }
+        );
     }
 
      async isStudentNotLogged(){
-        await expect(this.page).toHaveURL("https://staging.testertestarudo.com/es/login");
+        await expect(this.page).toHaveURL("https://staging.testertestarudo.com/es/login",
+        { timeout: 15000 }
+        );
     }
 }

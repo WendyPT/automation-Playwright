@@ -18,6 +18,9 @@
   "homepage": "https://github.com/WendyPT/Automation-Playwright_TesterTestarudo-Page#readme",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.0"
+    "@types/node": "^25.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
